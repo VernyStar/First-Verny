@@ -380,3 +380,11 @@ tp.innerHTML += `
       <section id='under'></section>
       <section id='social'></section>
    </main>`;
+
+const $$tp = tp.querySelectorAll.bind(tp);
+const $tp = tp.querySelector.bind(tp);
+const stp = $tp('.subheader');
+const htp = $tp('header');
+const scm = $tp('#social');
+const undo = $tp('#under');
+const mtp = $tp('#dd');
