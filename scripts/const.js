@@ -232,11 +232,11 @@ doc.addEventListener("DOMContentLoaded", function () {
              atr = evt.getAttribute("data-modal");
          if (atr === "language") {
             lb.classList.add(A); om.classList.add(A);
-            navigator.vibrate(15);
+            navigator.vibrate(10);
          }
          if (atr === "phone") {
             nb.classList.add(A); om.classList.add(A);
-            navigator.vibrate(15);
+            navigator.vibrate(10);
          }
       });
    });
@@ -319,14 +319,14 @@ const mm = current.querySelector('nav');
       
 function openMenu() {
    mm.classList.add(A);
-      navigator.vibrate(15);
+      navigator.vibrate(10);
    page.classList.remove('fade-in');
    page.classList.add(O);
 }
 
 function closeMenu() {
    mm.classList.remove(A);
-      navigator.vibrate(15);
+      navigator.vibrate(10);
    page.classList.add('fade-in');
    page.classList.remove(O);
 }
