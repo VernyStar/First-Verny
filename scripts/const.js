@@ -232,11 +232,11 @@ doc.addEventListener("DOMContentLoaded", function () {
              atr = evt.getAttribute("data-modal");
          if (atr === "language") {
             lb.classList.add(A); om.classList.add(A);
-            navigator.vibrate(15);
+            navigator.vibrate(10);
          }
          if (atr === "phone") {
             nb.classList.add(A); om.classList.add(A);
-            navigator.vibrate(15);
+            navigator.vibrate(10);
          }
       });
    });
@@ -319,14 +319,14 @@ const mm = current.querySelector('nav');
       
 function openMenu() {
    mm.classList.add(A);
-      navigator.vibrate(15);
+      navigator.vibrate(10);
    page.classList.remove('fade-in');
    page.classList.add(O);
 }
 
 function closeMenu() {
    mm.classList.remove(A);
-      navigator.vibrate(15);
+      navigator.vibrate(10);
    page.classList.add('fade-in');
    page.classList.remove(O);
 }
@@ -355,13 +355,116 @@ doc.addEventListener('click', m => {
       let xAbs = Math.abs(inn.pageX - fin.pageX);
       let yAbs = Math.abs(inn.pageY - fin.pageY);
       if (xAbs > 120 || yAbs > 120) {
-         if (xAbs > yAbs) {
-            if (fin.pageX < inn.pageX) {
-               closeMenu();
-            } else {
-               openMenu();
-            }
-         }
-      }
-   });
+          if (xAbs > yAbs) {
+               if (fin.pageX < inn.pageX) {
+                  closeMenu();
+               } else {
+                  openMenu();
+               }
+           }
+       }
+   })
 })();
+
+tp.innerHTML += `
+   <header><img src='${logo2}'></header>
+   <div class='subheader'>
+      <button id="langs" aria-label="lang" data-modal="language">
+         <span class="flag-active"><use class="fi fi-ua"></use></span>
+         <span class="hidden" id="l-text"></span>
+      </button>
+      <button id="letter" class="fas fa-envelope letter vibra"></button>
+   </div>
+   <main>
+      <section id='dd'><nav id="menu"><ul class="menuSV no-js"></ul></nav></section>
+      <section id='under'></section>
+      <section id='social'></section>
+   </main>`;
+const stp = $tp('.subheader');
+const htp = $tp('header');
+const scm = $tp('#social');
+const undo = $tp('#under');
+const mtp = $tp('#dd');
+(() => {
+  let k = mtp.querySelector('nav');
+  k.setAttribute('class', 'app-navigation');
+  for (let i in mainmenu) {
+    let n = k.querySelector('.menuSV');
+    n.innerHTML += `
+      <li><a href="#">${mainmenu[i].name}
+         <i class="down-arr"></i></a>
+         <ul id="${mainmenu[i].id}"></ul>
+      </li>`;
+  }
+})();
+
+link1.forEach((item) => {
+   let li = doc.createElement("li");
+       li.innerHTML = `
+   <a href="#">${item}</a>`;
+      doc.getElementById('Company').appendChild(li);
+  })
+  link2.forEach((item) => {
+      let li = doc.createElement("li");
+          li.innerHTML = `<a href="#">${item}</a>`;
+      doc.getElementById('Drivers').appendChild(li);
+  })
+  link3.forEach((item) => {
+      let li = doc.createElement("li");
+          li.innerHTML = `<a href="#">${item}</a>`;
+      doc.getElementById('Fuel').appendChild(li);
+  })
+  link4.forEach((item) => {
+      let li = doc.createElement("li");
+          li.innerHTML = `<a href="#">${item}</a>`;
+     doc.getElementById('Cards').appendChild(li);
+  })
+  link5.forEach((item) => {
+      let li = doc.createElement("li");
+          li.innerHTML = `<a href="#">${item}</a>`;
+      doc.getElementById('Press').appendChild(li);
+  });
+}
+apptree();
+const underdata = () => {
+  links.forEach((item) => {
+      let li = doc.createElement("li");
+          li.innerText = item;
+      undo.appendChild(li);
+  });
+}
+underdata();
+const socials = () => {
+   for (let i in socmmenu) {
+      sapp.innerHTML += `
+      <a href="${socmmenu[i].href}">
+         <li>
+           <i class="${socmmenu[i].klas}"></i>
+         </li>
+      </a>`;
+   }
+}
+socials();
+sapp.querySelectorAll('a').forEach(e => {
+   e.addEventListener('click', m => {
+      let a = m.currentTarget;
+      setTimeout(() => {
+          win.open(a.getAttribute('href'));
+      }, 250);
+   })
+});
+sapp.querySelectorAll('i').forEach(e => {
+   e.addEventListener('click', m => {
+      let f = m.currentTarget;
+      f.classList.add('scale');
+    })
+})
+const subanim = () => {
+  let sub = doc.querySelectorAll('.menuSV ul');
+      sub.forEach(e => {
+        let s = e.getAttribute('aria-hidden');
+          'true' === s && (e.classList.add(A));
+         'false' === s && (e.classList.remove(A));
+      })
+}
+subanim();
