@@ -380,9 +380,6 @@ tp.innerHTML += `
       <section id='under'></section>
       <section id='social'></section>
    </main>`;
-
-const $$tp = tp.querySelectorAll.bind(tp);
-const $tp = tp.querySelector.bind(tp);
 const stp = $tp('.subheader');
 const htp = $tp('header');
 const scm = $tp('#social');
@@ -392,11 +389,11 @@ const mtp = $tp('#dd');
   let k = mtp.querySelector('nav');
       k.setAttribute('class', 'app-navigation');
   for (let i in mainmenu) {
-         let n = k.querySelector('.menuSV');
+      let n = k.querySelector('.menuSV');
       n.innerHTML += `
       <li><a href="#">${mainmenu[i].name}
-          <i class="down-arr"></i></a>
-          <ul id="${mainmenu[i].id}"></ul>
+         <i class="down-arr"></i></a>
+         <ul id="${mainmenu[i].id}"></ul>
       </li>`;
   }
 })();
