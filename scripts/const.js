@@ -394,17 +394,17 @@ const mtp = $tp('#dd');
   for (let i in mainmenu) {
          let n = k.querySelector('.menuSV');
       n.innerHTML += `
-      <li>
-         <a href="#">${mainmenu[i].name}
-            <i class="down-arr"></i>
-         </a>
-         <ul id="${mainmenu[i].id}"></ul>
+      <li><a href="#">${mainmenu[i].name}
+          <i class="down-arr"></i></a>
+          <ul id="${mainmenu[i].id}"></ul>
       </li>`;
   }
 })();
-  link1.forEach((item) => {
-      let li = doc.createElement("li");
-          li.innerHTML = `<a href="#">${item}</a>`;
+
+link1.forEach((item) => {
+   let li = doc.createElement("li");
+       li.innerHTML = `
+   <a href="#">${item}</a>`;
       doc.getElementById('Company').appendChild(li);
   })
   link2.forEach((item) => {
