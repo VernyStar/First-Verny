@@ -373,8 +373,7 @@ tp.innerHTML += `
          <span class="flag-active"><use class="fi fi-ua"></use></span>
          <span class="hidden" id="l-text"></span>
       </button>
-      <button id="letter" class="fas fa-envelope letter vibra"></button>
-   <div class="modal" data-modal="language"></div>
+      <button id="letter" class="fas fa-envelope letter vibra"></button>
    </div>
    <main>
       <section id='dd'><nav id="menu"><ul class="menuSV no-js"></ul></nav></section>
