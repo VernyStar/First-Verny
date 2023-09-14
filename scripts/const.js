@@ -401,6 +401,7 @@ const mtp = $tp('#dd');
          <ul id="${mainmenu[i].id}"></ul>
       </li>`;
   }
+})();
   link1.forEach((item) => {
       let li = doc.createElement("li");
           li.innerHTML = `<a href="#">${item}</a>`;
