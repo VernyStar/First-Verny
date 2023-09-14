@@ -387,10 +387,10 @@ const undo = $tp('#under');
 const mtp = $tp('#dd');
 (() => {
   let k = mtp.querySelector('nav');
-      k.setAttribute('class', 'app-navigation');
+  k.setAttribute('class', 'app-navigation');
   for (let i in mainmenu) {
-      let n = k.querySelector('.menuSV');
-      n.innerHTML += `
+    let n = k.querySelector('.menuSV');
+    n.innerHTML += `
       <li><a href="#">${mainmenu[i].name}
          <i class="down-arr"></i></a>
          <ul id="${mainmenu[i].id}"></ul>
