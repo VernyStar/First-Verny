@@ -354,14 +354,14 @@ doc.addEventListener('click', m => {
       fin = e.changedTouches[0];
       let xAbs = Math.abs(inn.pageX - fin.pageX);
       let yAbs = Math.abs(inn.pageY - fin.pageY);
-         if (xAbs > 120 || yAbs > 120) {
-            if (xAbs > yAbs) {
-               if (fin.pageX < inn.pageX) {
+     if (xAbs > 120 || yAbs > 120) {
+         if (xAbs > yAbs) {
+              if (fin.pageX < inn.pageX) {
                   closeMenu();
-               } else {
+              } else {
                   openMenu();
-               }
-            }
-         }
+              }
+          }
+      }
    });
 })();
