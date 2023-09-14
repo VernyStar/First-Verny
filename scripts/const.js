@@ -365,3 +365,19 @@ doc.addEventListener('click', m => {
        }
    })
 })();
+
+tp.innerHTML += `
+   <header><img src='${logo2}'></header>
+   <div class='subheader'>
+      <button id="langs" aria-label="lang" data-modal="language">
+         <span class="flag-active"><use class="fi fi-ua"></use></span>
+         <span class="hidden" id="l-text"></span>
+      </button>
+      <button id="letter" class="fas fa-envelope letter vibra"></button>
+   <div class="modal" data-modal="language"></div>
+   </div>
+   <main>
+      <section id='dd'><nav id="menu"><ul class="menuSV no-js"></ul></nav></section>
+      <section id='under'></section>
+      <section id='social'></section>
+   </main>`;
