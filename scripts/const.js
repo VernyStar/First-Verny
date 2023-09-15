@@ -386,46 +386,53 @@ const scm = $tp('#social');
 const undo = $tp('#under');
 const mtp = $tp('#dd');
 (() => {
-  let k = mtp.querySelector('nav');
-      k.setAttribute('class', 'app-navigation');
-  for (let i in mainmenu) {
-      let n = k.querySelector('.menuSV');
-      n.innerHTML += `
-      <li><a href="#">${mainmenu[i].name}
-         <i class="down-arr"></i></a>
-         <ul id="${mainmenu[i].id}"></ul>
-      </li>`;
-  }
+    let k = mtp.querySelector('nav');
+        k.setAttribute('class', 'app-navigation');
+    for (let i in mainmenu) {
+         let n = k.querySelector('.menuSV');
+             n.innerHTML += `
+       <li><a href="#">${mainmenu[i].name}
+          <i class="down-arr"></i></a>
+          <ul id="${mainmenu[i].id}"></ul>
+       </li>`;
+    }
 })();
 
 link1.forEach((item) => {
    let li = doc.createElement("li");
        li.innerHTML = `
    <a href="#">${item}</a>`;
-      doc.getElementById('Company').appendChild(li);
-  })
-  link2.forEach((item) => {
-      let li = doc.createElement("li");
-          li.innerHTML = `<a href="#">${item}</a>`;
-      doc.getElementById('Drivers').appendChild(li);
-  })
-  link3.forEach((item) => {
-      let li = doc.createElement("li");
-          li.innerHTML = `<a href="#">${item}</a>`;
-      doc.getElementById('Fuel').appendChild(li);
-  })
-  link4.forEach((item) => {
-      let li = doc.createElement("li");
-          li.innerHTML = `<a href="#">${item}</a>`;
-     doc.getElementById('Cards').appendChild(li);
-  })
-  link5.forEach((item) => {
-      let li = doc.createElement("li");
-          li.innerHTML = `<a href="#">${item}</a>`;
-      doc.getElementById('Press').appendChild(li);
-  });
-}
-apptree();
+   $$('Company').appendChild(li);
+})
+
+link2.forEach((item) => {
+   let li = doc.createElement("li");
+       li.innerHTML = `
+   <a href="#">${item}</a>`;
+   $$('Drivers').appendChild(li);
+})
+
+link3.forEach((item) => {
+    let li = doc.createElement("li");
+        li.innerHTML = `
+    <a href="#">${item}</a>`;
+    $$('Fuel').appendChild(li);
+})
+
+link4.forEach((item) => {
+    let li = doc.createElement("li");
+        li.innerHTML = `
+    <a href="#">${item}</a>`;
+    $$('Cards').appendChild(li);
+})
+
+link5.forEach((item) => {
+    let li = doc.createElement("li");
+        li.innerHTML = `
+    <a href="#">${item}</a>`;
+    $$('Press').appendChild(li);
+});
+
 const underdata = () => {
   links.forEach((item) => {
       let li = doc.createElement("li");
@@ -434,6 +441,7 @@ const underdata = () => {
   });
 }
 underdata();
+
 const socials = () => {
    for (let i in socmmenu) {
       sapp.innerHTML += `
@@ -453,18 +461,19 @@ sapp.querySelectorAll('a').forEach(e => {
       }, 250);
    })
 });
-sapp.querySelectorAll('i').forEach(e => {
+
+$$$('i').forEach(e => {
    e.addEventListener('click', m => {
       let f = m.currentTarget;
       f.classList.add('scale');
     })
 })
-const subanim = () => {
-  let sub = doc.querySelectorAll('.menuSV ul');
-      sub.forEach(e => {
-        let s = e.getAttribute('aria-hidden');
-          'true' === s && (e.classList.add(A));
+
+(() => {
+    let sub = $$$('.menuSV ul');
+    sub.forEach(e => {
+       let s = e.getAttribute('aria-hidden');
+         'true' === s && (e.classList.add(A));
          'false' === s && (e.classList.remove(A));
-      })
-}
-subanim();
+    })
+})();
